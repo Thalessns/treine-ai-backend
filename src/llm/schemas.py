@@ -4,7 +4,11 @@ from src.database.schemas import Usuario
 
 
 class CriarTreino(BaseModel):
-    pessoa: Usuario
+    sexo: str
+    idade: int
+    peso: float
+    altura: int
     local_treino: str
-    dias_max: int
     tempo_max_treino: int
+    dias_max: int
+    tempo_total_treino: int

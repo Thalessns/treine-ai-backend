@@ -5,6 +5,6 @@ class Usuario(BaseModel):
     codigo: int
     nome: str
     idade: int
-    altura: float
+    altura: int
     tempo_total_treino: int
     
