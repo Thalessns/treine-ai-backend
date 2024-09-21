@@ -7,36 +7,127 @@
 	},
 	"item": [
 		{
-			"name": "criar-treino",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 21,\r\n    \"peso\": 72,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"tempo_max_treino\": 1,\r\n    \"dias_max\": 5,\r\n    \"tempo_total_treino\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "LLM",
+			"item": [
+				{
+					"name": "criar-treino",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 21,\r\n    \"peso\": 75,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"horas_max_treino\": 1,\r\n    \"dias_max_treino\": 5,\r\n    \"total_meses_treino\": 26\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/llm/criar-treino",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"llm",
+								"criar-treino"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://0.0.0.0:6000/llm/criar-treino",
-					"protocol": "http",
-					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
-					],
-					"port": "6000",
-					"path": [
-						"llm",
-						"criar-treino"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "criar-usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\",\r\n    \"idade\": 20,\r\n    \"altura\": 175,\r\n    \"total_meses_treino\": 26 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/database/user/create",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"database",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/database/user/login",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"database",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "teste@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "senha",
+									"value": "teste",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
