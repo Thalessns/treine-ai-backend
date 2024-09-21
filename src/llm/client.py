@@ -2,9 +2,10 @@ from httpx import AsyncClient
 from typing import List, Dict, Any
 
 from src.llm.config import settings
-from src.llm.constants import Prompts
 from src.llm.schemas import CriarTreino
 from src.llm.utils import format_prompt, get_response_content
+from src.llm.exceptions import RequestException
+
 
 class Client:
 
@@ -21,7 +22,7 @@ class Client:
             )
             return get_response_content(response.json())
         except Exception as error:
-            print(f"Erro ao fazer requisição ao Gemini: {error}")
+            raise RequestException(detail=f"Erro ao fazer requisição ao Gemini: {error}")
 
 
 client = Client()

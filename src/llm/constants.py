@@ -4,7 +4,7 @@ class Prompts:
     CRIAR_TREINO = [
         """
             Crie um cronograma de treino para uma pessoa do sexo {sexo}, de {idade} anos, pesando {peso}kg e tendo {altura}cm de altura seguindo os seguintes requisitos: 
-            O treino será feito em {local_treino}, durando {tempo_max_treino} hora(s) de musculação, {dias_max} dias na semana e considerando que a pessoa já treina a {tempo_total_treino} ano(s).
+            O treino será feito em {local_treino}, durando {horas_max_treino} hora(s) de musculação, {dias_max_treino} dias na semana e considerando que a pessoa já treina há {total_meses_treino} mes(es).
         """,
         """
             Este cronograma deve conter as informações da periodização e dos exercícios de cada dia de treino.
