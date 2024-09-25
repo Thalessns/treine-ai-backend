@@ -10,7 +10,7 @@ class Prompts:
             Este cronograma deve conter as informações da periodização e dos exercícios de cada dia de treino.
             Retorne SOMENTE em JSON SEM FORMATAÇÂO VISUAL, seguindo os campos principais: "Foco do treino", "Periodização"  e "Treino". No campo de "Periodização", os objetos devem ser separados em semanas e dentro destes objetos irá conter a quantidade de repetições dos exercícios. Dentro do campo "Treino", os objetos devem ser separados por dia e o grupamento muscular a ser trabalhado e dentro dos objetos terá o nome do exercício e a quantidade de séries a serem feitas por cada exercício.
 
-            Siga este exemplo: 
+            Siga este exemplo e CERTIFIQUE-SE DE RETORNAR O RESULTADO NO SEGUINTE FORMATO SEM FORMATAÇÃO VISUAL: 
             {
                 "foco_do_treino": "...",
                 "periodizacao": {
