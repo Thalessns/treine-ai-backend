@@ -12,21 +12,21 @@ class Prompts:
 
             Siga este exemplo: 
             {
-                "Foco do treino": "...",
-                "Periodização": {
-                    "Semana 1-2": {
+                "foco_do_treino": "...",
+                "periodizacao": {
+                    "semana_1-2": {
                     },
-                    "Semana 3-a": {
+                    "semana_3-a": {
                     },
-                    "Semana a-n": {
+                    "semana_a-n": {
                     }
                 }
-                "Treino": {
-                    "Dia 1": {
+                "treino": {
+                    "dia_1": {
                     },
-                    "Dia 2": {
+                    "dia_2": {
                     },
-                    "Dia n": {
+                    "dia_n": {
                     }
                 }
             }
