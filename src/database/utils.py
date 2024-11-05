@@ -30,7 +30,7 @@ class Database():
             return await conn.execute(query)
 
     def parse_content(self, content: Union[Dict, List[Dict]]) -> Union [Dict, List[Dict]]:
-        if type(content) is List:
+        if type(content) is list:
             result = []
             for row in content:
                 data = {}
