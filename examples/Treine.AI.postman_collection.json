@@ -53,7 +53,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\",\r\n    \"idade\": 20,\r\n    \"altura\": 175,\r\n    \"total_meses_treino\": 26 \r\n}",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\",\r\n    \"idade\": 20,\r\n    \"altura\": 175,\r\n    \"total_meses_treino\": 28\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -120,6 +120,87 @@
 								{
 									"key": "senha",
 									"value": "teste",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workout",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"b2e17ad0-0037-45b2-8fef-762e55cdbe50\",\r\n    \"workout\": {\r\n        \"foco_do_treino\": \"Hipertrofia\",\r\n        \"periodizacao\": {\r\n            \"semana_1-4\": {\r\n                \"repeticoes\": \"6-8\"\r\n            },\r\n            \"semana_5-8\": {\r\n                \"repeticoes\": \"8-10\"\r\n            },\r\n            \"semana_9-12\": {\r\n                \"repeticoes\": \"10-12\"\r\n            }\r\n        },\r\n        \"treino\": {\r\n            \"dia_1\": {\r\n                \"peito\": [\r\n                    {\r\n                        \"nome\": \"Supino Inclinado\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Crucifixo Inclinado\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Flexões Inclinadas\",\r\n                        \"series\": 3\r\n                    }\r\n                ],\r\n                \"triceps\": [\r\n                    {\r\n                        \"nome\": \"Triceps Testa\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Triceps Corda\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Mergulho\",\r\n                        \"series\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_2\": {\r\n                \"costas\": [\r\n                    {\r\n                        \"nome\": \"Puxada Alta\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Remada Curvada\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Remada Baixa\",\r\n                        \"series\": 3\r\n                    }\r\n                ],\r\n                \"biceps\": [\r\n                    {\r\n                        \"nome\": \"Rosca Direta\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Rosca Inversa\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Rosca Concentrada\",\r\n                        \"series\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_3\": {\r\n                \"pernas\": [\r\n                    {\r\n                        \"nome\": \"Agachamento Livre\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Leg Press\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Extensão de Quadríceps\",\r\n                        \"series\": 3\r\n                    }\r\n                ],\r\n                \"panturrilha\": [\r\n                    {\r\n                        \"nome\": \"Panturrilha em pé\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Panturrilha sentado\",\r\n                        \"series\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_4\": {\r\n                \"ombros\": [\r\n                    {\r\n                        \"nome\": \"Elevação Lateral\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Elevação Frontal\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Remada Alta\",\r\n                        \"series\": 3\r\n                    }\r\n                ],\r\n                \"core\": [\r\n                    {\r\n                        \"nome\": \"Abdominal Supra\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Abdominal Obliquo\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Prancha\",\r\n                        \"series\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_5\": {\r\n                \"peito\": [\r\n                    {\r\n                        \"nome\": \"Supino Reto\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Crucifixo Reto\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Flexões\",\r\n                        \"series\": 3\r\n                    }\r\n                ],\r\n                \"triceps\": [\r\n                    {\r\n                        \"nome\": \"Triceps Barra\",\r\n                        \"series\": 4\r\n                    },\r\n                    {\r\n                        \"nome\": \"Triceps Polia\",\r\n                        \"series\": 3\r\n                    },\r\n                    {\r\n                        \"nome\": \"Mergulho\",\r\n                        \"series\": 3\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/database/workout/create",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"database",
+								"workout",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"b2e17ad0-0037-45b2-8fef-762e55cdbe50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/database/workout/select-user",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"database",
+								"workout",
+								"select-user"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "ce343fdc-627e-466c-af1c-6106a1c46a10",
 									"disabled": true
 								}
 							]
