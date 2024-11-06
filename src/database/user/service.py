@@ -1,4 +1,4 @@
-from sqlalchemy import insert, select
+from sqlalchemy import insert, select, and_
 from bcrypt import gensalt, hashpw, checkpw
 from uuid import uuid4
 
@@ -26,10 +26,10 @@ class UserService:
         await database.execute(insert_query)
 
     async def login_user(self, data: UserLogin) -> User:
-        select_query = select(user).where(
-            user.email == data.email and
+        select_query = select(user).where(and_(
+            user.email == data.email,
             user.senha == self.hash_password(data.senha)
-        )
+            ))
         result = await database.fetch_one(select_query)
         if result is None:
             raise LoginFailure
