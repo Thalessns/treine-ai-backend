@@ -1,7 +1,8 @@
 from pydantic import BaseModel
 from uuid import UUID
 
-class NewUser(BaseModel):
+
+class NovoUsuario(BaseModel):
     nome: str
     email: str
     senha: str
@@ -10,12 +11,12 @@ class NewUser(BaseModel):
     total_meses_treino: int
 
 
-class UserLogin(BaseModel):
+class UsuarioLogin(BaseModel):
     email: str
     senha: str
 
 
-class User(BaseModel):
+class Usuario(BaseModel):
     codigo: UUID
     nome: str
     email: str

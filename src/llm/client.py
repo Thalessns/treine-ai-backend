@@ -12,7 +12,6 @@ class Client:
 
     client = AsyncClient(verify=False)
 
-
     async def request_gemini(self, data: CriarTreino, prompt: List[str]) -> Dict[str, Any]:
         try:
             response = await self.client.post(
