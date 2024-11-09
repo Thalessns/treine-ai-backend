@@ -3,7 +3,7 @@ import json
 from pydantic import BaseModel
 from typing import List, Dict, Any
 
-from src.llm.schemas import NewWorkout
+from src.llm.schemas import NovoTreino
 
 
 class Utils:
@@ -11,7 +11,7 @@ class Utils:
     @classmethod
     def validate_new_workout(cls, response: Dict[str, Any]) -> bool:
         try:
-            NewWorkout(**response)
+            NovoTreino(**response)
             return True
         except Exception:
             return False

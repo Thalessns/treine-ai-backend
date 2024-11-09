@@ -3,6 +3,7 @@ from typing import Dict, Any
 
 
 class CriarTreino(BaseModel):
+    objetivo: str
     sexo: str
     idade: int
     peso: float
@@ -13,7 +14,8 @@ class CriarTreino(BaseModel):
     total_meses_treino: int
 
 
-class NewWorkout(BaseModel):
-    foco_do_treino: str
+class NovoTreino(BaseModel):
+    objetivo: str
     periodizacao: Dict[str, Any]
     treino: Dict[str, Any]
+    cardio: Dict[str, Any]

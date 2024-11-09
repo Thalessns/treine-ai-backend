@@ -3,8 +3,8 @@ from sqlalchemy import (Column, String, Integer, UUID, BLOB)
 from src.database.utils import Base
 
 
-class User(Base):
-    __tablename__ = "User"
+class UsuarioTable(Base):
+    __tablename__ = "usuario"
     
     codigo = Column(UUID, primary_key=True)
     nome = Column(String, nullable=False)
@@ -14,4 +14,4 @@ class User(Base):
     total_meses_treino = Column(Integer, nullable=False)
 
 
-user = User
+usuario_table = UsuarioTable

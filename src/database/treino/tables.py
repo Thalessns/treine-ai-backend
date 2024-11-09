@@ -1,16 +1,16 @@
-from sqlalchemy import (Column, UUID, JSON, DateTime, ForeignKey, func)
+from sqlalchemy import (Column, UUID, JSON, DateTime, ForeignKey)
 from datetime import datetime
 
 from src.database.utils import Base
 
 
-class Workout(Base):
-    __tablename__ = "Workout"
+class TreinoTable(Base):
+    __tablename__ = "treino"
 
     codigo = Column(UUID, primary_key=True)
-    user = Column(UUID, ForeignKey("User.codigo"), nullable=False)
+    usuario = Column(UUID, ForeignKey("usuario.codigo"), nullable=False)
     treino = Column(JSON, nullable=False)
     data_criacao = Column(DateTime, default=datetime.now())
     
 
-workout = Workout
+treino_table = TreinoTable
