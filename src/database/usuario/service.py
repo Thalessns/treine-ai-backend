@@ -18,7 +18,7 @@ class UsuarioService:
         if await database.fetch_one(select_query) is not None:
             raise EmailJaUtilizado
         insert_query = insert(usuario_table).values(
-            codigo = uuid4(),
+            codigo = str(uuid4()),
             nome = dados.nome,
             email = dados.email,
             senha = self.hash_senha(dados.senha),
