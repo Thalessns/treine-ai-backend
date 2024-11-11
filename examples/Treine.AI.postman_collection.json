@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a7cb3ed5-c52a-48c9-851c-d8758d6c863d",
+		"_postman_id": "030f8e84-758b-4743-a2c5-a2bec47cde1c",
 		"name": "Treine.AI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34268498"
@@ -128,7 +128,7 @@
 			]
 		},
 		{
-			"name": "Workout",
+			"name": "Treino",
 			"item": [
 				{
 					"name": "Salvar-treino",
@@ -201,6 +201,51 @@
 								}
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calorias",
+			"item": [
+				{
+					"name": "Criar-plano",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"07028516-6e8a-4eb2-b16d-fa3f784ff833\",\r\n    \"carb_g\": 220,\r\n    \"prot_g\": 160,\r\n    \"gord_g\": 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/calorias/criar",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"calorias",
+								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Selecionar-plano",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
