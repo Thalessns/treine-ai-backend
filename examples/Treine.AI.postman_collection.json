@@ -124,6 +124,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Alterar-foto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"bb89a394-7524-42c4-9742-32d9966c3871\",\r\n    \"foto_perfil\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/usuario/alterar-foto",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"usuario",
+								"alterar-foto"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -216,7 +248,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"usuario\": \"07028516-6e8a-4eb2-b16d-fa3f784ff833\",\r\n    \"carb_g\": 220,\r\n    \"prot_g\": 160,\r\n    \"gord_g\": 70\r\n}",
+							"raw": "{\r\n    \"usuario\": \"07028516-6e8a-4eb2-b16d-fa3f784ff834\",\r\n    \"carb_g\": 160,\r\n    \"prot_g\": 160,\r\n    \"gord_g\": 70\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -243,9 +275,36 @@
 				},
 				{
 					"name": "Selecionar-plano",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"07028516-6e8a-4eb2-b16d-fa3f784ff833\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/calorias/selecionar-plano",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"calorias",
+								"selecionar-plano"
+							]
+						}
 					},
 					"response": []
 				}

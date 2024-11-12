@@ -9,6 +9,12 @@ class EmailJaUtilizado(DatabaseException):
     DETAIL = "O Email informado já foi utilizado"
 
 
+class TipoDeArquivoInvalido(DatabaseException):
+
+    STATUS_CODE = status.HTTP_415_UNSUPPORTED_MEDIA_TYPE
+    DETAIL = "A imagem deve ser jpeg ou png."
+
+
 class LoginFalha(DatabaseException):
 
     STATUS_CODE = status.HTTP_401_UNAUTHORIZED
