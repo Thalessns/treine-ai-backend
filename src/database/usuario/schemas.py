@@ -1,4 +1,6 @@
+from fastapi import UploadFile
 from pydantic import BaseModel
+from typing import Union
 from uuid import UUID
 
 
@@ -18,7 +20,13 @@ class UsuarioLogin(BaseModel):
 
 class Usuario(BaseModel):
     codigo: UUID
+    foto_perfil: bytes
     nome: str
     email: str
     altura: int
     total_meses_treino: int
+
+
+class AlterarFoto(BaseModel):
+    usuario: UUID
+    foto_perfil: Union[UploadFile, None]
