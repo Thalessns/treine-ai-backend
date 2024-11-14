@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "030f8e84-758b-4743-a2c5-a2bec47cde1c",
+		"_postman_id": "83f39370-01c0-489e-af96-421fd4c326bb",
 		"name": "Treine.AI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34268498"
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"objetivo\": \"Perda de peso\",\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 21,\r\n    \"peso\": 75,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"horas_max_treino\": 1,\r\n    \"dias_max_treino\": 5,\r\n    \"total_meses_treino\": 26\r\n}",
+							"raw": "{\r\n    \"objetivo\": \"perda de peso\",\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 21,\r\n    \"peso\": 75,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"horas_max_treino\": 1,\r\n    \"dias_max_treino\": 5,\r\n    \"total_meses_treino\": 0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -53,7 +53,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\",\r\n    \"idade\": 20,\r\n    \"altura\": 175,\r\n    \"total_meses_treino\": 28\r\n}",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\",\r\n    \"idade\": 20,\r\n    \"altura\": 175,\r\n    \"total_meses_treino\": 0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -152,6 +152,38 @@
 							"path": [
 								"usuario",
 								"alterar-foto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar-senha",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha_atual\": \"teste\",\r\n    \"senha_nova\": \"teste1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:6000/usuario/alterar-senha",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "6000",
+							"path": [
+								"usuario",
+								"alterar-senha"
 							]
 						}
 					},

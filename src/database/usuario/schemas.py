@@ -27,6 +27,12 @@ class Usuario(BaseModel):
     total_meses_treino: int
 
 
+class AlterarSenha(BaseModel):
+    email: str
+    senha_atual: str
+    senha_nova: str
+
+
 class AlterarFoto(BaseModel):
     usuario: UUID
     foto_perfil: Union[UploadFile, None]
