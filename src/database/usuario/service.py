@@ -2,7 +2,7 @@ from sqlalchemy import insert, select, update, and_
 from fastapi import UploadFile
 from base64 import b64encode
 from bcrypt import hashpw
-from typing import Union
+from typing import Union, Dict
 from uuid import uuid4
 from os import environ
 
@@ -12,12 +12,14 @@ from src.database.usuario.schemas import (
     NovoUsuario, 
     UsuarioLogin, 
     Usuario,
-    AlterarFoto
+    AlterarFoto,
+    AlterarSenha
 )
 from src.database.usuario.exception import (
     LoginFalha, 
     EmailJaUtilizado,
-    TipoDeArquivoInvalido
+    TipoDeArquivoInvalido,
+    SenhaIncorretaAlteracao
 )
 
 
@@ -44,15 +46,22 @@ class UsuarioService:
         await database.execute(insert_query)
 
     async def login(self, data: UsuarioLogin) -> Usuario:
-        select_query = select(usuario_table).where(and_(
-            usuario_table.email == data.email,
-            usuario_table.senha == self._hash_senha(data.senha)
-            ))
-        result = await database.fetch_one(select_query)
+        result = await self._busca_usuario_senha(data.email, data.senha)
         if result is None:
             raise LoginFalha
         del result["senha"]
         return Usuario(**result)
+
+    async def alterar_senha(self, dados: AlterarSenha) -> None:
+        # Verificando se a senha do usuário é a esperada
+        if await self._busca_usuario_senha(dados.email, dados.senha_atual) is None:
+            raise SenhaIncorretaAlteracao
+        # Preparando query de update
+        update_query = update(usuario_table).values(
+            senha = self._hash_senha(dados.senha_nova)
+        ).where(usuario_table.email == dados.email)
+        # Realizando alteração de senha
+        await database.execute(update_query)
 
     async def alterar_foto(self, dados: AlterarFoto) -> None:
         # Verificando se a imagem é válida
@@ -64,6 +73,13 @@ class UsuarioService:
         # Executando query
         await database.execute(update_query)
 
+    async def _busca_usuario_senha(self, email: str, senha: str) -> Union[Dict, None]:
+        select_query = select(usuario_table).where(and_(
+            usuario_table.email == email,
+            usuario_table.senha == self._hash_senha(senha)
+        ))
+        return await database.fetch_one(select_query)
+    
     async def _verifica_imagem(self, img: Union[UploadFile, None]) -> bytes:
         if img is None:
             return self._enconde_bytes(self._busca_imagem_padrao())

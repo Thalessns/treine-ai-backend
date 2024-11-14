@@ -19,3 +19,9 @@ class LoginFalha(DatabaseException):
 
     STATUS_CODE = status.HTTP_401_UNAUTHORIZED
     DETAIL = "Erro no login, credenciais incorretas."
+
+
+class SenhaIncorretaAlteracao(DatabaseException):
+    
+    STATUS_CODE = status.HTTP_401_UNAUTHORIZED
+    DETAIL = "Erro na alteração de senha, a senha atual está incorreta."
