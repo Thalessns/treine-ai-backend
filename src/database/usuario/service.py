@@ -12,6 +12,7 @@ from src.database.usuario.schemas import (
     NovoUsuario, 
     UsuarioLogin, 
     Usuario,
+    AtualizarInfo,
     AlterarFoto,
     AlterarSenha
 )
@@ -38,9 +39,7 @@ class UsuarioService:
             foto_perfil = self._enconde_bytes(self._busca_imagem_padrao()),
             nome = dados.nome,
             email = dados.email,
-            senha = self._hash_senha(dados.senha),
-            altura = dados.altura,
-            total_meses_treino = dados.total_meses_treino
+            senha = self._hash_senha(dados.senha)
         )
         # Inserindo no banco
         await database.execute(insert_query)
@@ -51,6 +50,17 @@ class UsuarioService:
             raise LoginFalha
         del result["senha"]
         return Usuario(**result)
+
+    async def atualizar_infos(self, dados: AtualizarInfo) -> None:
+        # Preparando query
+        update_query = update(usuario_table).values(
+            sexo = dados.sexo,
+            idade = dados.idade,
+            altura = dados.altura,
+            total_meses_treino = dados.total_meses_treino
+        ).where(usuario_table.codigo == str(dados.usuario))
+        # Executando query
+        await database.execute(update_query)
 
     async def alterar_senha(self, dados: AlterarSenha) -> None:
         # Verificando se a senha do usuário é a esperada

@@ -1,8 +1,9 @@
 from pydantic import BaseModel
 from typing import Dict, Any
-
+from uuid import UUID
 
 class CriarTreino(BaseModel):
+    usuario: UUID
     objetivo: str
     sexo: str
     idade: int

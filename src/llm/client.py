@@ -1,4 +1,4 @@
-from httpx import AsyncClient, HTTPError
+from httpx import AsyncClient, RequestError
 from typing import List, Dict, Any
 from json import JSONDecodeError
 
@@ -10,7 +10,7 @@ from src.llm.exceptions import RequestException, ResponseException
 
 class Client:
 
-    client = AsyncClient(verify=False)
+    client = AsyncClient(verify=False, timeout=10)
 
     async def request_gemini(self, data: CriarTreino, prompt: List[str]) -> Dict[str, Any]:
         try:
@@ -24,8 +24,9 @@ class Client:
             if not Utils.validate_new_workout(content):
                 raise ResponseException()
             return content
-        except HTTPError as error:
-            raise RequestException(detail=f"Erro ao fazer requisição ao Gemini: {error.__dict__}")
+        except RequestError as error:
+            raise RequestException(
+                detail=f"Erro ao fazer requisição ao Gemini: {error.__dict__}")
         except JSONDecodeError:
             ResponseException()
 
