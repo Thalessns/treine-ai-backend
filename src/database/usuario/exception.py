@@ -3,6 +3,12 @@ from fastapi import status
 from src.database.exceptions import DatabaseException
 
 
+class SenhasDiferentes(DatabaseException):
+
+    STATUS_CODE = status.HTTP_406_NOT_ACCEPTABLE
+    DETAIL = "As senhas estão diferentes."
+
+
 class EmailJaUtilizado(DatabaseException):
     
     STATUS_CODE = status.HTTP_400_BAD_REQUEST

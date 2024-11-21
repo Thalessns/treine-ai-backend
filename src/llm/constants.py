@@ -31,6 +31,14 @@ class Prompts:
                 }
                 "treino": {
                     "dia_1": {
+                        "musculo_1": {
+                            "exercicio_1": "x séries",
+                            "exercicio_n": "x séries"
+                        }
+                        "musculo_n":{
+                            "exercicio_1": "x séries",
+                            "exercicio_n": "x séries"
+                        } 
                     },
                     "dia_2": {
                     },
@@ -39,10 +47,12 @@ class Prompts:
                 }
                 "cardio":{
                     "dia_1": {
-                    },
-                    "dia_2": {
+                        "intensidade": "baixa, moderada ou alta",
+                        "duracao": "Tempo em minutos"
                     },
                     "dia_n": {
+                        "intensidade": "baixa, moderada ou alta",
+                        "duracao": "Tempo em minutos"
                     }
                 }
             }

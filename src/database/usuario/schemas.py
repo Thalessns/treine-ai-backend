@@ -8,6 +8,7 @@ class NovoUsuario(BaseModel):
     nome: str
     email: str
     senha: str
+    senha_conf: str
 
 
 class UsuarioLogin(BaseModel):
@@ -37,6 +38,7 @@ class AlterarSenha(BaseModel):
     email: str
     senha_atual: str
     senha_nova: str
+    senha_nova_conf: str
 
 
 class AlterarFoto(BaseModel):

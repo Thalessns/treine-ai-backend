@@ -17,6 +17,7 @@ from src.database.usuario.schemas import (
     AlterarSenha
 )
 from src.database.usuario.exception import (
+    SenhasDiferentes,
     LoginFalha, 
     EmailJaUtilizado,
     TipoDeArquivoInvalido,
@@ -29,6 +30,9 @@ class UsuarioService:
     salt = environ.get("FIXED_SALT").encode()
 
     async def criar_usuario(self, dados: NovoUsuario) -> None:
+        # Verificando se as senhas são iguais
+        if dados.senha != dados.senha_conf:
+            raise SenhasDiferentes
         # Verificando se o email já está registrado
         select_query = select(usuario_table).where(usuario_table.email == dados.email)
         if await database.fetch_one(select_query) is not None:
@@ -63,6 +67,9 @@ class UsuarioService:
         await database.execute(update_query)
 
     async def alterar_senha(self, dados: AlterarSenha) -> None:
+        # Verificando se as senhas sao iguais
+        if dados.senha_nova != dados.senha_nova_conf:
+            raise SenhasDiferentes
         # Verificando se a senha do usuário é a esperada
         if await self._busca_usuario_senha(dados.email, dados.senha_atual) is None:
             raise SenhaIncorretaAlteracao
