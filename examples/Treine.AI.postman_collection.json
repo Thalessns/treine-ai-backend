@@ -7,98 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "LLM",
-			"item": [
-				{
-					"name": "criar-treino",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"usuario\": \"c54f8b16-50cf-48a1-9cd9-d1c4ecb8e7d9\",\r\n    \"objetivo\": \"hipertrofia\",\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 20,\r\n    \"peso\": 75,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"horas_max_treino\": 1,\r\n    \"dias_max_treino\": 5,\r\n    \"total_meses_treino\": 0\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://0.0.0.0:6000/llm/criar-treino",
-							"protocol": "http",
-							"host": [
-								"0",
-								"0",
-								"0",
-								"0"
-							],
-							"port": "6000",
-							"path": [
-								"llm",
-								"criar-treino"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "criar-treino",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"usuario\": \"c54f8b16-50cf-48a1-9cd9-d1c4ecb8e7d9\",\r\n    \"objetivo\": \"hipertrofia\",\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 20,\r\n    \"peso\": 75,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"horas_max_treino\": 1,\r\n    \"dias_max_treino\": 5,\r\n    \"total_meses_treino\": 0\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://0.0.0.0:6000/llm/criar-treino",
-									"protocol": "http",
-									"host": [
-										"0",
-										"0",
-										"0",
-										"0"
-									],
-									"port": "6000",
-									"path": [
-										"llm",
-										"criar-treino"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "date",
-									"value": "Tue, 19 Nov 2024 15:19:18 GMT"
-								},
-								{
-									"key": "server",
-									"value": "uvicorn"
-								},
-								{
-									"key": "content-length",
-									"value": "1644"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"objetivo\": \"Hipertrofia\",\n    \"periodizacao\": {\n        \"semana_1-4\": {\n            \"repeticoes\": \"8-12 repetições por série, foco na execução\"\n        },\n        \"semana_5-8\": {\n            \"repeticoes\": \"6-10 repetições por série, aumento de peso\"\n        },\n        \"semana_9-12\": {\n            \"repeticoes\": \"4-8 repetições por série, aumento de peso e foco na força\"\n        }\n    },\n    \"treino\": {\n        \"dia_1\": {\n            \"grupo_muscular\": \"Peito\",\n            \"exercicios\": [\n                {\n                    \"nome\": \"Supino Reto\",\n                    \"series\": 4\n                },\n                {\n                    \"nome\": \"Supino Inclinado\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Crucifixo\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Flexão de Braços\",\n                    \"series\": 3\n                }\n            ]\n        },\n        \"dia_2\": {\n            \"grupo_muscular\": \"Costas\",\n            \"exercicios\": [\n                {\n                    \"nome\": \"Pull-up (ou barra fixa)\",\n                    \"series\": 4\n                },\n                {\n                    \"nome\": \"Remada Curvada\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Remada Aberta\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Remada Unilateral\",\n                    \"series\": 3\n                }\n            ]\n        },\n        \"dia_3\": {\n            \"grupo_muscular\": \"Perna\",\n            \"exercicios\": [\n                {\n                    \"nome\": \"Agachamento\",\n                    \"series\": 4\n                },\n                {\n                    \"nome\": \"Leg Press\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Stiff\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Panturrilha em pé\",\n                    \"series\": 3\n                }\n            ]\n        },\n        \"dia_4\": {\n            \"grupo_muscular\": \"Ombro\",\n            \"exercicios\": [\n                {\n                    \"nome\": \"Desenvolvimento Militar\",\n                    \"series\": 4\n                },\n                {\n                    \"nome\": \"Elevação Lateral\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Elevação Frontal\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Remada Alta\",\n                    \"series\": 3\n                }\n            ]\n        },\n        \"dia_5\": {\n            \"grupo_muscular\": \"Braço\",\n            \"exercicios\": [\n                {\n                    \"nome\": \"Rosca Direta\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Rosca Concentrada\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Rosca Inversa\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Extensão de tríceps corda\",\n                    \"series\": 3\n                },\n                {\n                    \"nome\": \"Extensão de tríceps halteres\",\n                    \"series\": 3\n                }\n            ]\n        }\n    },\n    \"cardio\": {\n        \"dia_1\": {\n            \"tipo\": \"Leve\",\n            \"duracao\": \"20 minutos\",\n            \"intensidade\": \"baixa\"\n        },\n        \"dia_2\": {\n            \"tipo\": \"Descanso\"\n        },\n        \"dia_3\": {\n            \"tipo\": \"Leve\",\n            \"duracao\": \"20 minutos\",\n            \"intensidade\": \"baixa\"\n        },\n        \"dia_4\": {\n            \"tipo\": \"Descanso\"\n        },\n        \"dia_5\": {\n            \"tipo\": \"Leve\",\n            \"duracao\": \"20 minutos\",\n            \"intensidade\": \"baixa\"\n        }\n    }\n}"
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "Usuario",
 			"item": [
 				{
@@ -108,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"teste\",\r\n    \"senha_conf\": \"teste\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -116,7 +24,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/usuario/criar",
+							"raw": "http://0.0.0.0:8000/usuario/criar",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -124,7 +32,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"usuario",
 								"criar"
@@ -151,7 +59,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/usuario/login",
+							"raw": "http://0.0.0.0:8000/usuario/login",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -159,7 +67,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"usuario",
 								"login"
@@ -195,7 +103,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/usuario/alterar-foto",
+							"raw": "http://0.0.0.0:8000/usuario/alterar-foto",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -203,7 +111,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"usuario",
 								"alterar-foto"
@@ -219,7 +127,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha_atual\": \"teste\",\r\n    \"senha_nova\": \"teste1\"\r\n}",
+							"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha_atual\": \"teste\",\r\n    \"senha_nova\": \"teste1\",\r\n    \"senha_nova_conf\": \"teste1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -227,7 +135,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/usuario/alterar-senha",
+							"raw": "http://0.0.0.0:8000/usuario/alterar-senha",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -235,7 +143,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"usuario",
 								"alterar-senha"
@@ -250,13 +158,13 @@
 			"name": "Treino",
 			"item": [
 				{
-					"name": "Salvar-treino",
+					"name": "Criar",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"usuario\": \"07028516-6e8a-4eb2-b16d-fa3f784ff833\",\r\n    \"treino\": {\r\n        \"objetivo\": \"Perda de peso\",\r\n        \"periodizacao\": {\r\n            \"semana_1-4\": {\r\n                \"Repetições\": \"8-12\"\r\n            },\r\n            \"semana_5-8\": {\r\n                \"Repetições\": \"6-8\"\r\n            },\r\n            \"semana_9-12\": {\r\n                \"Repetições\": \"4-6\"\r\n            },\r\n            \"semana_13-16\": {\r\n                \"Repetições\": \"8-12\"\r\n            },\r\n            \"semana_17-20\": {\r\n                \"Repetições\": \"6-8\"\r\n            },\r\n            \"semana_21-24\": {\r\n                \"Repetições\": \"4-6\"\r\n            },\r\n            \"semana_25-26\": {\r\n                \"Repetições\": \"8-12\"\r\n            }\r\n        },\r\n        \"treino\": {\r\n            \"dia_1\": {\r\n                \"Peito\": [\r\n                    {\r\n                        \"Exercício\": \"Supino Inclinado\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Crucifixo Inclinado\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Flexões Inclinadas\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ],\r\n                \"Tríceps\": [\r\n                    {\r\n                        \"Exercício\": \"Triceps Testa\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Extensões de Tríceps\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_2\": {\r\n                \"Costas\": [\r\n                    {\r\n                        \"Exercício\": \"Puxada Alta\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Remada Curvada\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Remada Baixa\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ],\r\n                \"Biceps\": [\r\n                    {\r\n                        \"Exercício\": \"Rosca Direta\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Rosca Inversa\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Rosca Concentrada\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_3\": {\r\n                \"Pernas\": [\r\n                    {\r\n                        \"Exercício\": \"Agachamento Livre\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Leg Press\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Extensão de Quadríceps\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Flexora de Joelho\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ],\r\n                \"Ombros\": [\r\n                    {\r\n                        \"Exercício\": \"Elevação Lateral\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Elevação Frontal\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Remada Alta\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ]\r\n            },\r\n            \"dia_4\": {\r\n                \"Descanso\": []\r\n            },\r\n            \"dia_5\": {\r\n                \"Abdomen\": [\r\n                    {\r\n                        \"Exercício\": \"Abdominal Supino\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Abdominal Invertido\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Prancha\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ],\r\n                \"Panturrilhas\": [\r\n                    {\r\n                        \"Exercício\": \"Panturrilha em pé\",\r\n                        \"Séries\": 3\r\n                    },\r\n                    {\r\n                        \"Exercício\": \"Panturrilha sentada\",\r\n                        \"Séries\": 3\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        \"cardio\": {\r\n            \"dia_1\": {\r\n                \"Exercício\": \"Esteira ou Bicicleta\",\r\n                \"Tempo\": \"30 minutos\",\r\n                \"Intensidade\": \"Moderada\"\r\n            },\r\n            \"dia_2\": {\r\n                \"Exercício\": \"Natação\",\r\n                \"Tempo\": \"30 minutos\",\r\n                \"Intensidade\": \"Moderada\"\r\n            },\r\n            \"dia_3\": {\r\n                \"Exercício\": \"Caminhada rápida\",\r\n                \"Tempo\": \"30 minutos\",\r\n                \"Intensidade\": \"Moderada\"\r\n            },\r\n            \"dia_4\": {\r\n                \"Exercício\": \"Descanso\",\r\n                \"Tempo\": \"0 minutos\",\r\n                \"Intensidade\": \"N/A\"\r\n            },\r\n            \"dia_5\": {\r\n                \"Exercício\": \"Elíptico\",\r\n                \"Tempo\": \"30 minutos\",\r\n                \"Intensidade\": \"Moderada\"\r\n            }\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n    \"usuario\": \"b32f7774-ba94-4ee7-8134-729898df20be\",\r\n    \"objetivo\": \"hipertrofia\",\r\n    \"sexo\": \"masculino\",\r\n    \"idade\": 20,\r\n    \"peso\": 75,\r\n    \"altura\": 175,\r\n    \"local_treino\": \"academia\",\r\n    \"horas_max_treino\": 1,\r\n    \"dias_max_treino\": 5,\r\n    \"total_meses_treino\": 0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -264,7 +172,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/treino/criar",
+							"raw": "http://0.0.0.0:8000/treino/criar",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -272,7 +180,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"treino",
 								"criar"
@@ -282,7 +190,7 @@
 					"response": []
 				},
 				{
-					"name": "Select-user",
+					"name": "Selecionar-usuario",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -291,7 +199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"usuario\": \"c54f8b16-50cf-48a1-9cd9-d1c4ecb8e7d9\"\r\n}",
+							"raw": "{\r\n    \"usuario\": \"b32f7774-ba94-4ee7-8134-729898df20be\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -299,7 +207,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/treino/selecionar-usuario",
+							"raw": "http://0.0.0.0:8000/treino/selecionar-usuario",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -307,7 +215,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"treino",
 								"selecionar-usuario"
@@ -343,7 +251,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/calorias/criar",
+							"raw": "http://0.0.0.0:8000/calorias/criar",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -351,7 +259,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"calorias",
 								"criar"
@@ -378,7 +286,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://0.0.0.0:6000/calorias/selecionar-plano",
+							"raw": "http://0.0.0.0:8000/calorias/selecionar-plano",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -386,7 +294,7 @@
 								"0",
 								"0"
 							],
-							"port": "6000",
+							"port": "8000",
 							"path": [
 								"calorias",
 								"selecionar-plano"
