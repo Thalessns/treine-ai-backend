@@ -17,6 +17,5 @@ class CriarTreino(BaseModel):
 
 class NovoTreino(BaseModel):
     objetivo: str
-    periodizacao: Dict[str, Any]
     treino: Dict[str, Any]
-    cardio: Dict[str, Any]
+

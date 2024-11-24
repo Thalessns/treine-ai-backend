@@ -21,40 +21,87 @@ class Prompts:
             Siga o seguinte exemplo e CERTIFIQUE-SE DE RETORNAR SEM FORMATAÇÃO VISUAL: 
             {
                 "objetivo": "...",
-                "periodizacao": {
-                    "semana_1-2": {
-                    },
-                    "semana_3-a": {
-                    },
-                    "semana_a-n": {
-                    }
-                }
                 "treino": {
                     "dia_1": {
                         "musculo_1": {
-                            "exercicio_1": "x séries",
-                            "exercicio_n": "x séries"
-                        }
+                            "exercicio_1": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            },
+                            "exercicio_n": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            }
+                        },
                         "musculo_n":{
-                            "exercicio_1": "x séries",
-                            "exercicio_n": "x séries"
-                        } 
+                            "exercicio_1": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            },
+                            "exercicio_n": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            }
+                        },
+                        "cardio":{
+                            "intensidade": "baixa, moderada ou alta",
+                            "duracao": "x minutos"
+                        }
                     },
                     "dia_2": {
+                        "musculo_1": {
+                            "exercicio_1": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            },
+                            "exercicio_n": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            }
+                        },
+                        "musculo_n":{
+                            "exercicio_1": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            },
+                            "exercicio_n": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            }
+                        },
+                        "cardio":{
+                            "intensidade": "baixa, moderada ou alta",
+                            "duracao": "x minutos"
+                        }
                     },
                     "dia_n": {
+                        "musculo_1": {
+                            "exercicio_1": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            },
+                            "exercicio_n": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            }
+                        },
+                        "musculo_n":{
+                            "exercicio_1": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            },
+                            "exercicio_n": {
+                                "series": "x",
+                                "repeticoes: "Entre x e y"
+                            }
+                        },
+                        "cardio":{
+                            "intensidade": "baixa, moderada ou alta",
+                            "duracao": "x minutos"
+                        }
                     }
                 }
-                "cardio":{
-                    "dia_1": {
-                        "intensidade": "baixa, moderada ou alta",
-                        "duracao": "Tempo em minutos"
-                    },
-                    "dia_n": {
-                        "intensidade": "baixa, moderada ou alta",
-                        "duracao": "Tempo em minutos"
-                    }
-                }
+                
             }
             Retorne SOMENTE em JSON SEM FORMATAÇÂO VISUAL.
         """
