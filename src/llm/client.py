@@ -21,7 +21,7 @@ class Client:
                 headers={"Content-Type": "application/json"}
             )
             content = Utils.get_response_content(response.json())
-            if not Utils.validate_new_workout(content):
+            if not content or not Utils.validate_new_workout(content):
                 raise ResponseException()
             return content
         except RequestError as error:

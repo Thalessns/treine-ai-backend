@@ -16,5 +16,5 @@ async def criar_plano(dados: CriarPlanoCalorico) -> None:
 
 
 @calorias_router.get("/selecionar-plano", response_model=PlanoCalorico)
-async def selecionar_plano(dados: SelecionarPlano) -> PlanoCalorico:
-    return await calorias_service.selecionar_plano(dados)
+async def selecionar_plano(usuario: str) -> PlanoCalorico:
+    return await calorias_service.selecionar_plano(usuario)

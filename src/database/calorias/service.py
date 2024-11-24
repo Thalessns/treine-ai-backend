@@ -5,8 +5,7 @@ from uuid import uuid4, UUID
 from src.database.calorias.exceptions import PlanoCaloricoInexistente
 from src.database.calorias.schemas import (
     CriarPlanoCalorico,
-    PlanoCalorico, 
-    SelecionarPlano
+    PlanoCalorico
 )
 from src.database.calorias.tables import calorias_table
 from src.database.utils import database
@@ -21,8 +20,8 @@ class CaloriasService:
             return
         await self._atualizar_plano(dados, dados_db)
 
-    async def selecionar_plano(self, dados: SelecionarPlano) -> PlanoCalorico:
-        result = await self._busca_plano(dados.usuario)
+    async def selecionar_plano(self, usuario: str) -> PlanoCalorico:
+        result = await self._busca_plano(UUID(usuario))
         if result is None:
             raise PlanoCaloricoInexistente
         return result

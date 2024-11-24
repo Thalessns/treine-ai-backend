@@ -19,8 +19,11 @@ async def criar(dados: NovoUsuario) -> str:
 
 
 @usuario_router.get("/login", status_code=200)
-async def login(dados: UsuarioLogin) -> Usuario:
-    return await usuario_service.login(dados)
+async def login(email: str, senha: str) -> Usuario:
+    return await usuario_service.login(UsuarioLogin(
+        email=email,
+        senha=senha
+    ))
 
 
 @usuario_router.put("/alterar-senha", status_code=201)
