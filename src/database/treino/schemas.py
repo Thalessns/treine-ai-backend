@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 from uuid import UUID
 
 from src.llm.schemas import NovoTreino
@@ -14,6 +15,7 @@ class Treino(BaseModel):
 
 class SalvarTreino(BaseModel):
     usuario: UUID
+    codigo: Optional[UUID] = None
     treino: NovoTreino
 
 

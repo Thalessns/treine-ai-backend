@@ -15,12 +15,12 @@ treino_router = APIRouter(prefix="/treino")
 
 
 @treino_router.post("/criar", status_code=201)
-async def criar_treino(dados: CriarTreino) -> NovoTreino:
+async def criar_treino(dados: CriarTreino) -> SalvarTreino:
     gemini_resposta = None
     while gemini_resposta is None:
         gemini_resposta = await client.request_gemini_treino(dados, Prompts.CRIAR_TREINO)
     treino = NovoTreino(**gemini_resposta)
-    await treino_service.criar_treino(SalvarTreino(
+    treino = await treino_service.criar_treino(SalvarTreino(
         usuario=dados.usuario,
         treino=treino
     ))
@@ -34,3 +34,8 @@ async def teste(dados: Teste):
 @treino_router.get("/selecionar-usuario", response_model=List[Treino])
 async def selecionar_treinos_usuario(usuario: str) -> List[Treino]:
     return await treino_service.selecionar_treinos_usuario(usuario)
+
+
+@treino_router.get("/selecionar-treino", response_model=Treino)
+async def selecionar_treino(codigo: str) -> Treino:
+    return await treino_service.selecionar_treino(codigo)
