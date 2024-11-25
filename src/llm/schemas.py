@@ -19,3 +19,5 @@ class NovoTreino(BaseModel):
     objetivo: str
     treino: Dict[str, Any]
 
+class Teste(BaseModel):
+    nums_qtd: int

@@ -106,4 +106,12 @@ class Prompts:
             Retorne SOMENTE em JSON SEM FORMATAÇÂO VISUAL.
         """
     ]
-    
+
+    PROMPT_TESTE = [
+        "Gere uma uma lista com {nums_qtd} números",
+        """
+            Siga o seguinte exemplo e CERTIFIQUE-SE DE RETORNAR SOMENTE EM JSON SEM FORMATAÇÂO VISUAL: 
+            Uma lista de três números seria: 
+            {"resultado": [1, 2, 3]}
+        """
+    ]
