@@ -21,8 +21,8 @@ class Prompts:
             Siga o seguinte exemplo e CERTIFIQUE-SE DE RETORNAR SEM FORMATAÇÃO VISUAL: 
             {
                 "objetivo": "...",
-                "treino": {
-                    "dia_1": {
+                "treino": [
+                    {
                         "musculo_1": {
                             "exercicio_1": {
                                 "series": "x",
@@ -48,7 +48,7 @@ class Prompts:
                             "duracao": "x minutos"
                         }
                     },
-                    "dia_2": {
+                    {
                         "musculo_1": {
                             "exercicio_1": {
                                 "series": "x",
@@ -74,7 +74,7 @@ class Prompts:
                             "duracao": "x minutos"
                         }
                     },
-                    "dia_n": {
+                    {
                         "musculo_1": {
                             "exercicio_1": {
                                 "series": "x",
@@ -100,7 +100,7 @@ class Prompts:
                             "duracao": "x minutos"
                         }
                     }
-                }
+                ]
                 
             }
             Retorne SOMENTE em JSON SEM FORMATAÇÂO VISUAL.

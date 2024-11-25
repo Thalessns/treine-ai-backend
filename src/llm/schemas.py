@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Dict, Any
+from typing import Dict, Any, List
 from uuid import UUID
 
 class CriarTreino(BaseModel):
@@ -17,7 +17,7 @@ class CriarTreino(BaseModel):
 
 class NovoTreino(BaseModel):
     objetivo: str
-    treino: Dict[str, Any]
+    treino: List[Dict[str, Any]]
 
 class Teste(BaseModel):
     nums_qtd: int
