@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 from uuid import UUID
 
 from src.llm.schemas import NovoTreino
@@ -21,3 +21,7 @@ class SalvarTreino(BaseModel):
 
 class SelecionarUsuario(BaseModel):
     usuario: UUID
+
+
+class ExerciciosAPI(BaseModel):
+    exercicios: List[List[str]]

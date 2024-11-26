@@ -5,7 +5,7 @@ from typing import List
 from uuid import uuid4
 
 from src.database.utils import database
-from src.database.treino.schemas import Treino, SalvarTreino
+from src.database.treino.schemas import Treino, SalvarTreino, ExerciciosAPI
 from src.database.treino.tables import treino_table
 from src.llm.schemas import NovoTreino
 from src.database.treino.exceptions import UsuarioSemTreino, TreinoNaoEncontrado
@@ -41,6 +41,19 @@ class TreinoService:
             raise TreinoNaoEncontrado
         treino["treino"] = NovoTreino(**json.loads(treino["treino"]))
         return Treino(** treino)
+
+    async def buscar_exercicios(self, codigo_treino: str) -> ExerciciosAPI:
+        treino = await self.selecionar_treino(codigo_treino)
+        dados = list()
+        for dia in treino.treino.treino:
+            for grupo, exercicios in dia.items():
+                if grupo == "cardio": continue
+                for ex, infos in exercicios.items():
+                    ex_atual = list()
+                    ex_atual.append(ex)
+                    for value in infos.values(): ex_atual.append(value)
+                    dados.append(ex_atual)
+        return ExerciciosAPI(exercicios=dados)
 
 
 treino_service = TreinoService()
