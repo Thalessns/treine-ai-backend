@@ -24,4 +24,4 @@ class SelecionarUsuario(BaseModel):
 
 
 class ExerciciosAPI(BaseModel):
-    exercicios: List[List[str]]
+    exercicios: List[List[List[str]]]

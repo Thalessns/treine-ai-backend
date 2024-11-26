@@ -46,13 +46,15 @@ class TreinoService:
         treino = await self.selecionar_treino(codigo_treino)
         dados = list()
         for dia in treino.treino.treino:
+            dia_atual = list()
             for grupo, exercicios in dia.items():
                 if grupo == "cardio": continue
                 for ex, infos in exercicios.items():
                     ex_atual = list()
                     ex_atual.append(ex)
                     for value in infos.values(): ex_atual.append(value)
-                    dados.append(ex_atual)
+                    dia_atual.append(ex_atual)
+            dados.append(dia_atual)
         return ExerciciosAPI(exercicios=dados)
 
 
