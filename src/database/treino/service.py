@@ -51,7 +51,7 @@ class TreinoService:
                 if grupo == "cardio": continue
                 for ex, infos in exercicios.items():
                     ex_atual = list()
-                    ex_atual.append(ex)
+                    ex_atual.append(ex.replace("_", " ").capitalize())
                     for value in infos.values(): ex_atual.append(value)
                     dia_atual.append(ex_atual)
             dados.append(dia_atual)
